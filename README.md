@@ -1,7 +1,7 @@
 # Equipe
 - Ana Lívia
-_ Marina Silva
-_ Jeniffer
+- Marina Silva
+- Jeniffer
 
 # Projeto
 Livrando é um site para troca de livros entre usuários.
