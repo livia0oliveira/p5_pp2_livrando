@@ -1,0 +1,22 @@
+<% include('layout') %>
+
+<h2>Minhas listas</h2>
+
+<% 
+    const books = Array(12).fill({
+        title: "Business Book",
+        cover: "https://via.placeholder.com/150",
+        author: "Autor Desconhecido"
+    });
+%>
+<body>
+    <div class="book-list">
+        <% books.forEach(book => { %>
+            <div class="book">
+                <img src="<%= book.cover %>" alt="<%= book.title %>">
+                <h4><%= book.title %></h4>
+                <p><%= book.author %></p>
+            </div>
+        <% }); %>
+    </div>
+</body>
