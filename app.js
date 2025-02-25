@@ -5,9 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var perfilRouter = require('./routes/perfil');
 var usersRouter = require('./routes/users');
 var listasRouter = require('./routes/listas');
-var info_livroRouter = require('./routes/info_livro');
+// var info_livroRouter = require('./routes/info_livro');
 
 var app = express();
 
@@ -23,9 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
+app.use('/perfil', perfilRouter);
 app.use('/users', usersRouter);
 app.use('/listas', listasRouter);
-app.use('/info_livro', info_livroRouter);
+// app.use('/info_livro', info_livroRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -33,14 +35,12 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use((err, req, res, next) => {
-  console.error(err.stack); // Log do erro no console
-  res.status(500).render('layout', { 
-      title: 'Erro', 
-      body: `<h2>Ocorreu um erro!</h2>
-              <p>${err.message}</p>
-              <p><a href="/">Voltar para a página inicial</a></p>`
-  });
+app.use(function(err, req, res, next) {
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  res.status(err.status || 500);
+  res.render('error');
 });
 
 module.exports = app;

@@ -1,0 +1,632 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    background-image: url(assets/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat:repeat-Y;
+    padding-top: 80px;
+    margin: 0;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: #9260AF;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position:fixed;
+    z-index: 1000; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 5px 0;
+}
+
+.logo {
+    font-family: 'Kenia'; 
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 92.07px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.icone-coracao:hover {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px #9260AF;
+}
+
+.icone-coracao:hover .mensagem-coracao {
+    display: block;  /* Mostra a mensagem */
+  }
+
+.mensagem-coracao {
+    display: none;
+    position: absolute;
+    top: 35px;  /* Ajusta a posição abaixo do ícone */
+    left: 0;
+    right: 5px;
+    background-color: #9260AF;
+    padding-right: 0;
+    padding-top: 1px;
+    padding-bottom: 0;
+    padding-left: 0;
+    color: white;
+    font-size: 14px;
+}
+
+  .icone-criar:hover {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px #9260AF;
+}
+
+.icone-criar:hover .mensagem-criar {
+    display: block;  /* Mostra a mensagem */
+  }
+
+.mensagem-criar {
+    display: none;
+    position: absolute;
+    top: 35px;  /* Ajusta a posição abaixo do ícone */
+    left: 0;
+    background-color: #9260AF;
+    padding: 2px 2px;
+    color: white;
+    font-size: 14px;
+}
+
+.icone-relogio:hover {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px #9260AF;
+}
+
+.icone-relogio:hover .mensagem-relogio {
+    display: block;  /* Mostra a mensagem */
+  }
+
+.mensagem-relogio {
+    display: none;
+    position: absolute;
+    top: 35px;  /* Ajusta a posição abaixo do ícone */
+    left: 0;
+    right: 5px;
+    background-color: #9260AF;
+    padding: 2px 2px;
+    color: white;
+    font-size: 14px;
+}
+
+.icone-chat:hover {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px #9260AF;
+}
+
+.icone-chat:hover .mensagem-chat {
+    display: block;  /* Mostra a mensagem */
+}
+
+.mensagem-chat {
+    display: none;
+    position: absolute;
+    top: 35px;  /* Ajusta a posição abaixo do ícone */
+    left: 0;
+    background-color: #9260AF;
+    padding: 2px 2px;
+    color: white;
+    font-size: 14px;
+}
+
+.icone-perfil:hover {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px #9260AF;
+}
+
+.icone-perfil:hover .mensagem-perfil {
+    display: block;  /* Mostra a mensagem */
+}
+
+.mensagem-perfil {
+    display: none;
+    position: absolute;
+    top: 35px;  /* Ajusta a posição abaixo do ícone */
+    left: 0;
+    background-color: #9260AF;
+    padding: 2px 2px;
+    color: white;
+    font-size: 14px;
+}
+
+.icones {
+    display: flex;
+    gap: 40px;
+}
+
+.linha-branca {
+    width: 90%;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    margin-top: 0;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-family: 'inter';
+    padding: 5px;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+    display: block;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown {
+    width: 100%;
+    background: #9260AF;
+    position: absolute;
+    
+    display: none;
+}
+
+ul li a:hover {
+    background: #8555a1;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+.dropdown a {
+    font-size: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+input {
+    padding: 5px;
+    width: 500px;
+    border-radius: 150px;
+}
+ 
+.next, .prev {
+    background-color: #ffffff;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.next:hover, .prev:hover {
+    background-color: #e5e0e8;
+
+}
+/* fim do header */
+
+.carrossel {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 410px;
+    overflow-x:scroll;
+    scroll-behavior: smooth;
+    transition: transform 0.1s ease-in-out;
+}
+
+.carrossel::-webkit-scrollbar {
+    display: none;
+}
+
+.book-info {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top: 90px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.book-info h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.book-info p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.karamazov {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top: 80px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.karamazov h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.karamazov p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.bibliotecamn {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top: 110px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.bibliotecamn h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.bibliotecamn p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.estrangeiro {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top: 90px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.estrangeiro h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.estrangeiro p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.emma {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top: 80px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.emma h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.emma p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.revolucao {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top: 120px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.revolucao h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.revolucao p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.ensaio {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top: 80px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.ensaio h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.ensaio p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.noitesb {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top:110px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.noitesb h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.noitesb p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.mulherzinhas {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top: 90px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.mulherzinhas h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.mulherzinhas p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.domc {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top: 100px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.domc h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.domc p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.orgulho {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top: 100px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.orgulho h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.orgulho p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.horadaestrela {
+    margin: 60px;
+    margin-bottom: 0;
+    margin-top: 70px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+.horadaestrela h1 {
+    font-family: 'inter';
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.horadaestrela p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-family: 'inter';
+}
+
+.container {
+    display: flex;
+    background-color: white;
+    width: 90%;
+    max-width: 1400px;
+    margin-top: 150px;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-left: 60px;
+    padding-bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.synopsis h1 {
+    font-family: 'inter';
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.synopsis {
+    font-family: 'inter';
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contact-btn {
+    background-color: #9260AF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    align-self: flex-start;
+}
+
+.contact-btn:hover {
+    background-color: #8e44ad;
+}
+
+.livros {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    gap: 22px;
+    width: 370px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.livro, .autor {
+    flex: 0 0 auto;
+    width: 350px;
+    text-align: center;
+}
+
+.livro img{
+    width: 100%;
+    height: 500px;
+    box-shadow: 7px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 9px;
+}

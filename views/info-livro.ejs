@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= livro.titulo %> - Troca de Livros</title>
+    <link rel="stylesheet" href="/stylesheets/livroinfo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <%- include('extras/header2') %>
+
+        <div class="carrossel">
+            <button class="prev">&#10094;</button>
+            <div class="livros">
+                <div class="livro">
+                    <img src="<%= livro.imagem %>" alt="Livro">
+                </div>
+            </div>
+            <button class="next">&#10095;</button>
+        </div>
+
+        <div class="book-info">
+            <h1><%= livro.titulo %></h1>
+            <p>Autor: <%= livro.autor %></p>
+            <p>Editora: <%= livro.editora %></p>
+            <div class="synopsis">
+                <h1>Sinopse</h1>
+                <p><%= livro.sinopse %></p>
+            </div>
+            <button class="contact-btn">Entrar em contato</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const carrosseis = document.querySelectorAll(".carrossel");
+
+        carrosseis.forEach(carrossel => {
+            const btnPrev = carrossel.querySelector(".prev");
+            const btnNext = carrossel.querySelector(".next");
+            const lista = carrossel.querySelector(".livros") || carrossel.querySelector(".autores-lista");
+
+            btnNext.addEventListener("click", () => {
+                lista.scrollBy({ left: 373, behavior: "smooth" });
+            });
+
+            btnPrev.addEventListener("click", () => {
+                lista.scrollBy({ left: -362, behavior: "smooth" });
+            });
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livrando - Troca de Livros</title>
+    <link rel="stylesheet" href="/stylesheets/perfil.css">
+    <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        
+        <%- include('extras/header2') %>
+
+        <div class="profile-container">
+            <div class="perfil">
+                <div class="header">
+                    <img src="images/autor.jpg" alt="Foto do Usuário" class="profile-pic">
+                    <div class="user-info">
+                      <h2>Maicon Jacksun Rodrigues Cordeiro</h2>
+                      <p>Fortaleza - CE</p>
+                    </div>
+                  </div>
+                  <div class="description-box">
+                    <textarea id="user-description" placeholder="Escreva algo sobre você...">Olá eu sou o Maicon e gosto muitão de ler livros.</textarea>
+                    <br>
+                  </div>
+            </div>
+        
+            <div class="user-stats">
+                <div class="calendar">
+                    <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M33.1109 4.90534H31.4758V3.27023C31.4758 2.37092 30.74 1.63512 29.8407 1.63512C28.9414 1.63512 28.2056 2.37092 28.2056 3.27023V4.90534H11.8545V3.27023C11.8545 2.37092 11.1187 1.63512 10.2194 1.63512C9.32009 1.63512 8.58429 2.37092 8.58429 3.27023V4.90534H6.94918C5.15055 4.90534 3.67896 6.37694 3.67896 8.17556V34.3373C3.67896 36.1359 5.15055 37.6075 6.94918 37.6075H33.1109C34.9096 37.6075 36.3812 36.1359 36.3812 34.3373V8.17556C36.3812 6.37694 34.9096 4.90534 33.1109 4.90534ZM31.4758 34.3373H8.58429C7.68498 34.3373 6.94918 33.6015 6.94918 32.7022V13.0809H33.1109V32.7022C33.1109 33.6015 32.3751 34.3373 31.4758 34.3373Z" fill="black"/>
+                        </svg>
+                        <span>Membro desde<br>01/01/2025</span>   
+                </div>
+              <div class="book">
+                <svg width="27" height="28" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M28.4235 7.9827C25.3018 7.9827 21.94 8.62304 19.6188 10.384C17.2975 8.62304 13.9357 7.9827 10.814 7.9827C8.49277 7.9827 6.02744 8.33489 3.96233 9.24738C2.7937 9.77566 2.00928 10.9123 2.00928 12.209V30.2667C2.00928 32.3478 3.96233 33.8846 5.97941 33.3724C7.54826 32.9721 9.21315 32.796 10.814 32.796C13.3114 32.796 15.9688 33.2123 18.1139 34.2688C19.0745 34.7491 20.163 34.7491 21.1076 34.2688C23.2527 33.1963 25.9101 32.796 28.4075 32.796C30.0083 32.796 31.6732 32.9721 33.2421 33.3724C35.2592 33.9006 37.2122 32.3638 37.2122 30.2667V12.209C37.2122 10.9123 36.4278 9.77566 35.2592 9.24738C33.2101 8.33489 30.7447 7.9827 28.4235 7.9827ZM34.0265 28.3617C34.0265 29.3702 33.098 30.1066 32.1055 29.9305C30.9048 29.7064 29.6562 29.6103 28.4235 29.6103C25.702 29.6103 21.7799 30.6509 19.6188 32.0116V13.5857C21.7799 12.225 25.702 11.1844 28.4235 11.1844C29.8963 11.1844 31.3531 11.3285 32.7458 11.6327C33.4822 11.7927 34.0265 12.4491 34.0265 13.2015V28.3617Z" fill="black"/>
+                    <path d="M22.7879 18.4043C22.2756 18.4043 21.8114 18.0841 21.6513 17.5718C21.4432 16.9475 21.7954 16.2591 22.4197 16.067C24.885 15.2666 28.0707 15.0105 31.0003 15.3466C31.6567 15.4267 32.1369 16.019 32.0569 16.6754C31.9768 17.3317 31.3845 17.812 30.7282 17.7319C28.1348 17.4278 25.3012 17.6679 23.1561 18.3563C23.028 18.3723 22.8999 18.4043 22.7879 18.4043Z" fill="black"/>
+                    <path d="M22.7879 22.6626C22.2756 22.6626 21.8114 22.3424 21.6513 21.8301C21.4432 21.2058 21.7954 20.5174 22.4197 20.3253C24.869 19.5249 28.0707 19.2688 31.0003 19.6049C31.6567 19.685 32.1369 20.2773 32.0569 20.9337C31.9768 21.59 31.3845 22.0703 30.7282 21.9902C28.1348 21.6861 25.3012 21.9262 23.1561 22.6146C23.028 22.6466 22.8999 22.6626 22.7879 22.6626Z" fill="black"/>
+                    <path d="M22.7879 26.9209C22.2756 26.9209 21.8114 26.6007 21.6513 26.0884C21.4432 25.4641 21.7954 24.7757 22.4197 24.5836C24.869 23.7832 28.0707 23.5271 31.0003 23.8632C31.6567 23.9433 32.1369 24.5356 32.0569 25.192C31.9768 25.8483 31.3845 26.3126 30.7282 26.2485C28.1348 25.9444 25.3012 26.1845 23.1561 26.8729C23.028 26.9049 22.8999 26.9209 22.7879 26.9209Z" fill="black"/>
+                    </svg>
+                    <span>Total de trocas<br>10</span>
+              </div>
+              <div class="thumbs-up">
+                <svg width="28" height="27" viewBox="0 0 40 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.9769 3.38328L13.0026 12.3576C12.4032 12.957 12.063 13.7832 12.063 14.6417V30.8247C12.063 32.6066 13.521 34.0645 15.3029 34.0645H29.8821C31.1781 34.0645 32.3444 33.287 32.8628 32.1044L38.1437 19.7769C39.5045 16.5694 37.1556 13.0056 33.6727 13.0056H24.5202L26.0591 5.58637C26.2211 4.77641 25.9781 3.95025 25.395 3.36708C24.4392 2.42753 22.9165 2.42753 21.9769 3.38328ZM5.58334 34.0645C7.36526 34.0645 8.82318 32.6066 8.82318 30.8247V17.8654C8.82318 16.0834 7.36526 14.6255 5.58334 14.6255C3.80143 14.6255 2.34351 16.0834 2.34351 17.8654V30.8247C2.34351 32.6066 3.80143 34.0645 5.58334 34.0645Z" fill="black"/>
+                    </svg>                    
+                <span>Avaliações boas<br>9</span>
+               </div>
+               <div class="thumbs-down">
+                    <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.3254 36.0398L27.389 26.9599C27.9954 26.3535 28.3396 25.5176 28.3396 24.649V8.27557C28.3396 6.4727 26.8645 4.99762 25.0616 4.99762H10.3272C9.01606 4.99762 7.83599 5.78433 7.32791 6.98078L1.98484 19.4534C0.591714 22.6986 2.96823 26.3043 6.49203 26.3043H15.7523L14.1952 33.8108C14.0313 34.6303 14.2772 35.4662 14.8672 36.0562C15.8342 37.0068 17.3748 37.0068 18.3254 36.0398ZM34.9119 4.99762C33.109 4.99762 31.6339 6.4727 31.6339 8.27557V21.3874C31.6339 23.1903 33.109 24.6653 34.9119 24.6653C36.7148 24.6653 38.1898 23.1903 38.1898 21.3874V8.27557C38.1898 6.4727 36.7148 4.99762 34.9119 4.99762Z" fill="black"/>
+                    </svg>
+                    <span>Avaliações ruins<br>1</span>
+               </div>
+            </div>
+        </div>
+
+        <section class="livros-em-alta">
+            <div class="linha-preta"></div>
+            <h2>Trocas ativas</h2>
+            <div class="carrossel">
+                <button class="prev">&#10094;</button>
+                <div class="livros">
+                    <div class="livro">
+                        <a href="/livroinfo.html">
+                            <img src="images/brasCubas.jpg" alt="Livro">
+                        </a>
+                        <p class="titulo-livro">Memórias póstumas de Brás Cubas</p>
+                    </div>
+                    <div class="livro">
+                        <a href="/livroinfo8.html">
+                            <img src="images/noitesBrancas.webp" alt="Livro">
+                        </a>
+                        <p class="titulo-livro">Noites Brancas</p>
+                    </div>
+                    <div class="livro">
+                        <a href="/livroinfo6.html">
+                            <img src="images/a-revolucao-dos-bichos.jpg" alt="Livro">
+                        </a>
+                        <p class="titulo-livro">A Revolução dos Bichos</p>
+                    </div>
+                    <div class="livro">
+                        <a href="/livroinfo10.html">
+                            <img src="images/dcasmurro.jpg" alt="Livro">
+                        </a>
+                        <p class="titulo-livro">Dom Casmurro</p>
+                    </div>
+                    <div class="livro">
+                        <a href="/livroinfo7.html">
+                            <img src="images/Ensaio-Sobre-a-Cegueira.jpg" alt="Livro">
+                        </a>
+                        <p class="titulo-livro">Ensaio Sobre a Cegueira</p>
+                    </div>
+                </div>
+                <button class="next">&#10095;</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

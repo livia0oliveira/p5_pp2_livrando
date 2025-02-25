@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela incial</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script defer src="/javascripts/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <%- include('extras/header2') %>
+
+        <section class="livros-em-alta">
+            <h2>Livros em Alta</h2>
+
+            <div class="carrossel">
+                <button class="prev">&#10094;</button>
+                <div class="livros">
+                    <% livros.forEach(livro => { %>
+                        <div class="livro">
+                            <a href="/livro/<%= livro.id %>">
+                                <img src="<%= livro.imagem %>" alt="Livro">
+                            </a>
+                            <p class="titulo-livro"><%= livro.titulo %></p>
+                        </div>
+                    <% }) %>
+                </div>
+                <button class="next">&#10095;</button>
+            </div>
+
+        </section>
+        <section class="livros-em-alta">
+            <h2>Livros Disponíveis</h2>
+            
+            <div class="carrossel">
+                <button class="prev">&#10094;</button>
+                <div class="livros-lista">
+                    <% livros.forEach(livro => { %>
+                        <div class="livro">
+                            <a href="/livro/<%= livro.id %>">
+                                <img src="<%= livro.imagem[0] %>" alt="<%= livro.titulo %>">
+                            </a>
+                            <p class="titulo-livro"><%= livro.titulo %></p>
+                        </div>
+                    <% }) %>
+                </div>
+                <button class="next">&#10095;</button>
+            </div>
+        </section>
+        
+
+        <section class="autores">
+            <h2>Autores</h2>
+            <div class="carrossel">
+                <button class="prev">&#10094;</button>
+                <div class="autores-lista">
+                    <% autores.forEach(autor => { %>
+                        <div class="autor">
+                            <a href="<%= autor.link %>">
+                                <img src="<%= autor.imagem %>" alt="Autor">
+                            </a>
+                            <p class="autor-livro"><%= autor.nome %></p>
+                        </div>
+                    <% }) %>
+                </div>
+                <button class="next">&#10095;</button>
+            </div>
+        </section>
+        
+    </div>
+</body>
+</html>

@@ -1,14 +1,70 @@
-<% include('layout') %>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    }
+
+    header {
+    background: #6c3ea7;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    }
+
+
+    nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    }
+
+    nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    }
+
+    main {
+    padding: 20px;
+    }
+
+    .book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    }
+
+    .book {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .book img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    }
+</style>
+
+<%- include('extras/header') %>
 
 <h2>Minhas listas</h2>
 
 <% 
     const books = Array(12).fill({
         title: "Business Book",
-        cover: "https://via.placeholder.com/150",
+        cover: "./images/book_cover.jpg",
         author: "Autor Desconhecido"
     });
 %>
+
 <body>
     <div class="book-list">
         <% books.forEach(book => { %>
@@ -17,6 +73,7 @@
                 <h4><%= book.title %></h4>
                 <p><%= book.author %></p>
             </div>
-        <% }); %>
+        <% });
+        %>
     </div>
 </body>
