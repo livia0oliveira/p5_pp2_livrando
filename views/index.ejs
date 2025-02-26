@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <%- include('extras/header2') %>
+        <%- include('extras/header') %>
 
         <section class="livros-em-alta">
             <h2>Livros em Alta</h2>
@@ -22,27 +22,8 @@
                 <div class="livros">
                     <% livros.forEach(livro => { %>
                         <div class="livro">
-                            <a href="/livro/<%= livro.id %>">
+                            <a href="/pesquisa?q=<%= encodeURIComponent(livro.titulo) %>">
                                 <img src="<%= livro.imagem %>" alt="Livro">
-                            </a>
-                            <p class="titulo-livro"><%= livro.titulo %></p>
-                        </div>
-                    <% }) %>
-                </div>
-                <button class="next">&#10095;</button>
-            </div>
-
-        </section>
-        <section class="livros-em-alta">
-            <h2>Livros Disponíveis</h2>
-            
-            <div class="carrossel">
-                <button class="prev">&#10094;</button>
-                <div class="livros-lista">
-                    <% livros.forEach(livro => { %>
-                        <div class="livro">
-                            <a href="/livro/<%= livro.id %>">
-                                <img src="<%= livro.imagem[0] %>" alt="<%= livro.titulo %>">
                             </a>
                             <p class="titulo-livro"><%= livro.titulo %></p>
                         </div>

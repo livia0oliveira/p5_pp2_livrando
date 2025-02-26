@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livrando - Troca de Livros</title>
     <link rel="stylesheet" href="/stylesheets/perfil.css">
-    <script defer src="script.js"></script>
+    <script defer src="/javascripts/script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         
-        <%- include('extras/header2') %>
+        <%- include('extras/header') %>
 
         <div class="profile-container">
             <div class="perfil">
@@ -67,36 +67,14 @@
             <div class="carrossel">
                 <button class="prev">&#10094;</button>
                 <div class="livros">
-                    <div class="livro">
-                        <a href="/livroinfo.html">
-                            <img src="images/brasCubas.jpg" alt="Livro">
-                        </a>
-                        <p class="titulo-livro">Memórias póstumas de Brás Cubas</p>
-                    </div>
-                    <div class="livro">
-                        <a href="/livroinfo8.html">
-                            <img src="images/noitesBrancas.webp" alt="Livro">
-                        </a>
-                        <p class="titulo-livro">Noites Brancas</p>
-                    </div>
-                    <div class="livro">
-                        <a href="/livroinfo6.html">
-                            <img src="images/a-revolucao-dos-bichos.jpg" alt="Livro">
-                        </a>
-                        <p class="titulo-livro">A Revolução dos Bichos</p>
-                    </div>
-                    <div class="livro">
-                        <a href="/livroinfo10.html">
-                            <img src="images/dcasmurro.jpg" alt="Livro">
-                        </a>
-                        <p class="titulo-livro">Dom Casmurro</p>
-                    </div>
-                    <div class="livro">
-                        <a href="/livroinfo7.html">
-                            <img src="images/Ensaio-Sobre-a-Cegueira.jpg" alt="Livro">
-                        </a>
-                        <p class="titulo-livro">Ensaio Sobre a Cegueira</p>
-                    </div>
+                    <% livros.forEach(livro => { %>
+                        <div class="livro">
+                            <a href="/livro/<%= livro.id %>">
+                                <img src="<%= livro.imagem %>" alt="Livro">
+                            </a>
+                            <p class="titulo-livro"><%= livro.titulo %></p>
+                        </div>
+                    <% }) %>
                 </div>
                 <button class="next">&#10095;</button>
             </div>

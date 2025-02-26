@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/pesquisa.css">
+    <title>Livrando - Busca</title>
+</head>
+<body>
+    <div class="container">
+        <%- include('extras/header') %> <!-- Inclui o cabeçalho -->
+        <br><br><br>
+
+        <div class="container-p">
+            <div class="sidebar">
+                <h3>Filtrar por Categoria</h3>
+                <label><input type="checkbox"> Ficção</label><br>
+                <label><input type="checkbox"> Fantasia</label><br>
+                <label><input type="checkbox"> Terror</label><br>
+            </div>
+
+            <div class="content">
+                <h2>(<%= resultados.length %>) Resultados para "<%= pesquisa %>"</h2>
+                
+                <div class="book-grid">
+                    <% resultados.forEach(livro => { %>
+                        <div class="livro">
+                            <a href="/livro/<%= livro.id %>">
+                                <img src="<%= livro.imagem %>" alt="Capa do Livro">
+                                <p><%= livro.titulo %></p>
+                            </a>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

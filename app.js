@@ -6,8 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var perfilRouter = require('./routes/perfil');
+var pesquisaRouter = require('./routes/pesquisa')
 var usersRouter = require('./routes/users');
-var listasRouter = require('./routes/listas');
+var listasRouter = require('./routes/minhaslistas');
 // var info_livroRouter = require('./routes/info_livro');
 
 var app = express();
@@ -22,11 +23,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req, res, next) => {
+  res.locals.pesquisa = ""; // Define a variável para todas as páginas
+  next();
+});
+
 
 app.use('/', indexRouter);
 app.use('/perfil', perfilRouter);
 app.use('/users', usersRouter);
 app.use('/listas', listasRouter);
+app.use('/pesquisa', pesquisaRouter);
 // app.use('/info_livro', info_livroRouter);
 
 // catch 404 and forward to error handler

@@ -11,20 +11,19 @@
         <%- include('extras/header') %>
 
         <section class="livros-em-alta">
-            <h2>Minhas Listas</h2>
+            <h2 style="text-align: center;"><%= lista.nome %></h2>
 
             <div class="book-list">
-                <% listas.forEach(lista => { %>
+                <% lista.livros.forEach(livro => { %>
                     <div class="livro">
-                        <a href="/listas/lista/<%= lista.nome %>">
-                            <img src="<%= lista.capa %>" alt="<%= lista.nome %>">
-                            <h4><%= lista.nome %></h4>
-                            <p><%= lista.author %></p>
+                        <a href="/pesquisa?q=<%= encodeURIComponent(livro.titulo) %>">
+                            <img src="<%= livro.imagem %>" alt="Capa do Livro">
+                            <p><%= livro.titulo %></p>
                         </a>
                     </div>
-                <% });
-                %>    
+                <% }); %>
             </div>
+            
         </section>
     </div>
 </body>

@@ -1,8 +1,14 @@
+/* gerais */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+}
+
+a {
+    color: inherit;  /* Herda a cor do texto ao invés de usar azul */
+    text-decoration: none; /* Remove o sublinhado */
 }
 
 body {
@@ -36,23 +42,66 @@ header {
     justify-content: space-between;
 }
 
-.topo {
+form {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 90%;
-    padding: 5px 0;
+    width: 500px;
+    height: 30px;
+    border-radius: 50px; /* Bordas arredondadas */
+    overflow: hidden; /* Garante que o botão fique dentro */
+    background-color: white; /* Cor de fundo unificada */
+    border: 1px solid #ccc;
 }
 
-.logo {
-    font-family: 'Kenia'; 
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 92.07px;
-    letter-spacing: -0.03em;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: none; /* Remove o fundo individual */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* ids */
+#texto-pesquisa {
+    padding-left: 20px;
+}
+
+/* icones */
+.icone-pesquisa {
+    margin-right: 40px;
+}
+
+.icone-pesquisa:hover {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px #9260AF;
+}
+
+.icone-pesquisa:hover .mensagem-pesquisa {
+    display: block;  /* Mostra a mensagem */
+}
+
+.mensagem-pesquisa {
+    display: none;
+    position: absolute;
+    top: 35px;  /* Ajusta a posição abaixo do ícone */
+    left: 0;
+    right: 5px;
+    background-color: #9260AF;
+    padding: 2px 2px;
+    color: white;
+    font-size: 14px;
 }
 
 .icone-coracao:hover {
@@ -68,19 +117,13 @@ header {
     display: block;  /* Mostra a mensagem */
 }
 
-.mensagem-coracao {
-    display: none;
-    position: absolute;
-    top: 35px;  /* Ajusta a posição abaixo do ícone */
-    left: 0;
-    right: 5px;
-    background-color: #9260AF;
-    padding-right: 0;
-    padding-top: 1px;
-    padding-bottom: 0;
-    padding-left: 0;
-    color: white;
-    font-size: 14px;
+.icone-criar:hover {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px #9260AF;
 }
 
 .icone-criar:hover {
@@ -94,17 +137,6 @@ header {
 
 .icone-criar:hover .mensagem-criar {
     display: block;  /* Mostra a mensagem */
-}
-
-.mensagem-criar {
-    display: none;
-    position: absolute;
-    top: 35px;  /* Ajusta a posição abaixo do ícone */
-    left: 0;
-    background-color: #9260AF;
-    padding: 2px 2px;
-    color: white;
-    font-size: 14px;
 }
 
 .icone-relogio:hover {
@@ -131,6 +163,36 @@ header {
     color: white;
     font-size: 14px;
 }
+
+.mensagem-coracao {
+    display: none;
+    position: absolute;
+    top: 35px;  /* Ajusta a posição abaixo do ícone */
+    left: 0;
+    right: 5px;
+    background-color: #9260AF;
+    padding-right: 0;
+    padding-top: 1px;
+    padding-bottom: 0;
+    padding-left: 0;
+    color: white;
+    font-size: 14px;
+}
+
+
+
+.mensagem-criar {
+    display: none;
+    position: absolute;
+    top: 35px;  /* Ajusta a posição abaixo do ícone */
+    left: 0;
+    background-color: #9260AF;
+    padding: 2px 2px;
+    color: white;
+    font-size: 14px;
+}
+
+
 
 .icone-chat:hover {
     width: 34px;
@@ -183,6 +245,26 @@ header {
 .icones {
     display: flex;
     gap: 40px;
+}
+
+/* alguma coisa */
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 5px 0;
+}
+
+.logo {
+    font-family: 'Kenia'; 
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 92.07px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
 }
 
 .linha-branca {
